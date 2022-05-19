@@ -1,0 +1,16 @@
+<%= render 'navbar' %>
+<% if @cart_products.empty? %>
+    <p>Cart Empty</p>
+<% else %>
+    <div style="display: flex; flex-flow: row wrap;">
+        <% @cart_products.each do |id,quantity| %>
+            <div style="padding: 10px;">
+                <% ele = Product.find(id) %>
+                <%= image_tag (ele.image), style: "height:10vw;width:10vw;" if ele.image.attached? %>
+                <p><%= ele.name %></p>
+                <p>quantity: <%= quantity %></p>
+                <p><%= button_to "Remove from cart", remove_path(id), method: :get %></p>
+            </div>
+        <% end %>
+    </div>
+<% end %>

@@ -1,0 +1,7 @@
+<nav style="display: block;background-color:lightblue;">
+    <ul>        
+        <li><%= link_to :Home, root_path %></li>
+        <li><%= link_to :Cart, homes_cart_path %></li>
+        <li><%= button_to :Logout, destroy_user_session_path(current_user), method: :delete %></li>
+    </ul>
+</nav>
