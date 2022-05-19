@@ -1,5 +1,5 @@
 <%= render 'navbar' %>
-<% if @cart_products.empty? %>
+<% if @cart_products.nil? || @cart_products.empty? %>
     <p>Cart Empty</p>
 <% else %>
     <div style="display: flex; flex-flow: row wrap;">
